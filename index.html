@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+
+    <title>Calculadora em HTML, JS e CSS</title>
+</head>
+
+<body>
+
+    <div class="h1">Calculadora Básica utilizando HTML5, Javacript e CSS3</div>
+
+    <div class="container">
+
+        <div class="intro-container">
+            <div class="h2">É possível utilizar o teclado para interagir com a
+                calculadora.<br>Keybinds:
+                <ul>
+                    <li>Backspace: Apagar</li>
+                    <li>Enter: Calcular</li>
+                    <li>. | ,: Decimal</li>
+                    <li>+ | - | * | /: Operação correspondente</li>
+                    <li>0 - 9: Número correspondente</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="calc-container">
+            <div class="mainCalc">
+                <div class="visor">
+                    <input id="visor" type="text" readonly />
+                </div>
+
+                <div class="btn-container">
+
+                    <div class="numButtons">
+                        <button id="btn7" class="btn" onclick=addNum(7)>7</button>
+                        <button id="btn8" class="btn" onclick=addNum(8)>8</button>
+                        <button id="btn9" class="btn" onclick=addNum(9)>9</button>
+                        <button id="btn4" class="btn" onclick=addNum(4)>4</button>
+                        <button id="btn5" class="btn" onclick=addNum(5)>5</button>
+                        <button id="btn6" class="btn" onclick=addNum(6)>6</button>
+                        <button id="btn1" class="btn" onclick=addNum(1)>1</button>
+                        <button id="btn2" class="btn" onclick=addNum(2)>2</button>
+                        <button id="btn3" class="btn" onclick=addNum(3)>3</button>
+                        <button id="btn0" class="btn" onclick=addNum(0)>0</button>
+                        <button id="btn." class="btn" onclick="addNum('.')">,</button>
+                        <button id="btnBackspace" class="btn" onclick=backspace()>&LeftArrow;</button>
+                    </div>
+
+                    <div class="actButtons">
+                        <button id="btnC" class="btn" onclick=clearVisor()>C</button>
+                        <button id="btn+" class="btn" onclick="addNum('+')">+</button>
+                        <button id="btn-" class="btn" onclick="addNum('-')">-</button>
+                        <button id="btn/" class="btn" onclick="addNum('/')">&divide;</button>
+                        <button id="btn*" class="btn" onclick="addNum('*')">&times;</button>
+                        <button id="btn=" class="btn" onclick=calculate()>=</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Developed by Matheus Della
+        <br>
+        <a target="_blank" href="https://www.linkedin.com/in/matheus-della-crocce-santos-86ab60232/"><img class="icon"
+                src="./images/linkedin.svg"></a>
+        <a target="_blank" href="https://github.com/MDellaCS/"><img class="icon" src="./images/github.svg"></a>
+    </div>
+</body>
+
+</html>

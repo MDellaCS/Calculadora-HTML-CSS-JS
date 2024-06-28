@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --fontTitle: "Roboto Slab";
+    --fontText: "Roboto";
+
+    --main: #7b9acc;
+    --main-hover: #77abff;
+    --bg: #FCF6F5;
+    --h1: #7b9acc;
+    --h2: #666666;
+    --shadow: #7b9acc33;
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        color-scheme: dark;
+    }
+
+    :root {
+        --main: #0c0101;
+        --main-hover: #7798f2;
+        --bg: #f0f0f0;
+        --h1: #59afe9;
+        --h2: #333;
+        --shadow: #ccc;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+html,
+body {
+    max-width: 100vw;
+}
+
+body {
+    background-color: var(--bg);
+}
+
+.container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.intro-container {
+    width: 30%;
+    padding: 5rem;
+}
+
+.calc-container {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    padding: 4rem 0 4rem 0;
+}
+
+.mainCalc {
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    border: solid 0.5rem #ccc;
+    border-radius: 2rem;
+    width: 50%;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+}
+
+
+.btn-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.numButtons {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+.actButtons {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+}
+
+/* ---------------------------------------------------------------- INPUT */
+
+input {
+    border: none;
+    border-bottom: 4px solid #a1c4fd;
+    /* Cor de destaque */
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    /* Fonte moderna e limpa */
+    font-size: 1.5rem;
+    font-weight: 500;
+    transition: .1s ease-out;
+    padding: 1rem;
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    color: #333;
+    /* Cor do texto */
+    width: 90%;
+    height: 2.5rem;
+    /* Ajuste da altura */
+    margin-top: 12px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #ffffff, #e0e0e0);
+    /* Gradiente suave */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    outline: none;
+    /* Remover a borda ao focar */
+}
+
+input:focus {
+    border-bottom: 4px solid #76c7f0;
+    /* Cor de destaque ao focar */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Sombra mais forte ao focar */
+}
+
+
+/* ---------------------------------------------------------------- BUTTON */
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    background: linear-gradient(135deg, #76c7f0, #a1c4fd);
+    color: white;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    transition: .2s ease-out;
+    text-decoration: none;
+    width: 4rem;
+    height: 4.4rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 0.2rem;
+    ;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #5ab3f0, #82b4fc);
+    /* Gradiente mais escuro ao passar o mouse */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    /* Sombra mais forte ao passar o mouse */
+}
+
+.btn:active {
+    background: linear-gradient(135deg, #4ca1f0, #76c7f0);
+    /* Gradiente mais escuro ao clicar */
+    transform: translateY(2px);
+    /* Deslocamento ao clicar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra reduzida ao clicar */
+    transition: none;
+}
+
+
+.h1 {
+    font-family: var(--fontTitle);
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    color: black;
+    margin: 2rem 0.5rem 2rem 0.5rem;
+}
+
+.h2 {
+    font-family: var(--fontText);
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 28px;
+    color: gray;
+}
+
+.footer {
+    font-family: var(--fontText);
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 28px;
+    color: gray;
+    background-color: #ccc;
+    padding: 2rem;
+    text-align: center;
+}
+
+a {
+    font-family: var(--fontText);
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: justify;
+    line-height: 28px;
+    color: gray;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    width: 3rem;
+    height: 3rem;
+    margin: 1rem;
+}
+
+:disabled,
+:disabled:hover {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
