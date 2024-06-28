@@ -19,6 +19,10 @@ let calculado = false;
 
 function action() {
 
+    visor.classList.remove('fade-in');
+    void visor.offsetWidth;
+    visor.classList.add('fade-in');
+
     btnPlus.disabled = true;
     btnMinus.disabled = true;
     btnDivide.disabled = true;
@@ -88,8 +92,10 @@ function backspace() {
 }
 
 function clearVisor() {
-    console.clear();
-    console.log("Limpando...\n\n\n");
+    
+    visor.classList.remove('spin');
+    void visor.offsetWidth;
+    visor.classList.add('spin');
 
     visor.value = "";
     action();
