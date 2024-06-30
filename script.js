@@ -1,22 +1,27 @@
-let visor;
-let btn0;
-let btn1;
-let btn2;
-let btn3;
-let btn4;
-let btn5;
-let btn6;
-let btn7;
-let btn8;
-let btn9;
-let btnPlus;
-let btnMinus;
-let btnDivide;
-let btnTimes;
-let btnEquals;
-let btnDecimal;
-let footer;
-let calculado = false;
+let visor, btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnPlus, btnMinus, btnDivide, btnTimes, btnEquals, btnDecimal, footer, calculado;
+
+document.addEventListener("DOMContentLoaded", function () {
+    visor = document.getElementById("visor");
+    btn0 = document.getElementById("btn0");
+    btn1 = document.getElementById("btn1");
+    btn2 = document.getElementById("btn2");
+    btn3 = document.getElementById("btn3");
+    btn4 = document.getElementById("btn4");
+    btn5 = document.getElementById("btn5");
+    btn6 = document.getElementById("btn6");
+    btn7 = document.getElementById("btn7");
+    btn8 = document.getElementById("btn8");
+    btn9 = document.getElementById("btn9");
+    btnPlus = document.getElementById("btn+");
+    btnMinus = document.getElementById("btn-");
+    btnDivide = document.getElementById("btn/");
+    btnTimes = document.getElementById("btn*");
+    btnEquals = document.getElementById("btn=");
+    btnDecimal = document.getElementById("btn.");
+    footer = document.getElementById("footer");
+    calculado = false;
+    action();
+});
 
 async function action() {
 
@@ -87,8 +92,8 @@ function calculate() {
 }
 
 function backspace() {
-    visor.value = visor.value.slice(0, -1);
 
+    visor.value = visor.value.slice(0, -1);
     action();
 }
 
@@ -102,10 +107,6 @@ async function clearVisor() {
 
     visor.classList.remove('spin');
     void visor.offsetWidth;
-}
-
-function delay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 document.addEventListener("keydown", function (event) {
@@ -153,7 +154,7 @@ document.addEventListener("keydown", function (event) {
 
 });
 
-function fixFooterToBottom() {
+function sunkFooter() {
     var bodyHeight = document.body.clientHeight;
     var windowHeight = window.innerHeight;
     var footerHeight = footer.offsetHeight;
@@ -168,27 +169,9 @@ function fixFooterToBottom() {
     }
 }
 
-window.onload = fixFooterToBottom;
-window.onresize = fixFooterToBottom;
+window.onload = sunkFooter;
+window.onresize = sunkFooter;
 
-document.addEventListener("DOMContentLoaded", function () {
-    visor = document.getElementById("visor");
-    btn0 = document.getElementById("btn0");
-    btn1 = document.getElementById("btn1");
-    btn2 = document.getElementById("btn2");
-    btn3 = document.getElementById("btn3");
-    btn4 = document.getElementById("btn4");
-    btn5 = document.getElementById("btn5");
-    btn6 = document.getElementById("btn6");
-    btn7 = document.getElementById("btn7");
-    btn8 = document.getElementById("btn8");
-    btn9 = document.getElementById("btn9");
-    btnPlus = document.getElementById("btn+");
-    btnMinus = document.getElementById("btn-");
-    btnDivide = document.getElementById("btn/");
-    btnTimes = document.getElementById("btn*");
-    btnEquals = document.getElementById("btn=");
-    btnDecimal = document.getElementById("btn.");
-    footer = document.getElementById("footer");
-    action();
-});
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
