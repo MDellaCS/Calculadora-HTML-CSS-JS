@@ -22,8 +22,8 @@
 
     :root {
         --main: linear-gradient(22deg, #cc5467, #99082e);
-    --main2: linear-gradient(22deg, #007fa1, #005381);
-    --main3: linear-gradient(22deg, #007fa1, #007fa1);
+        --main2: linear-gradient(22deg, #007fa1, #005381);
+        --main3: linear-gradient(22deg, #007fa1, #007fa1);
         --bg: #22001d;
         --main-hover: #CD2C6C;
         --h1: #ffffff;
