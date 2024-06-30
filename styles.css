@@ -19,12 +19,14 @@
     }
 
     :root {
-        --main: #0c0101;
-        --main-hover: #7798f2;
-        --bg: #f0f0f0;
-        --h1: #59afe9;
-        --h2: #333;
-        --shadow: #ccc;
+        --main: linear-gradient(22deg, #ff758f, #c9184a);
+        --main2: linear-gradient(22deg, #00b4d8, #0077b6);
+        --main3: linear-gradient(22deg, #00b4d8, #00b4d8);
+        --bg: #f7e2f4;
+        --main-hover: #CD2C6C;
+        --h1: #000000;
+        --h2: #333333;
+        --shadow: #f7cff1;
     }
 }
 
@@ -39,11 +41,11 @@
 
 html,
 body {
-    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 body {
-    background-color: var(--bg);
+    background: var(--bg);
 }
 
 .container {
@@ -52,57 +54,74 @@ body {
 }
 
 .intro-container {
-    width: 30%;
+    width: 40%;
     padding: 5rem;
-    border-radius: 8px;
-    background-color: black;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.keybinds ul {
-    list-style: none;
-    padding-left: 20px;
-    /* Aumentar o recuo dos bullet points */
-}
-
-.keybinds li {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.keybinds .key {
-    display: inline-block;
-    min-width: 100px;
-    /* Largura mínima para as teclas */
-    padding: 5px 10px;
-    margin-right: 10px;
-    background-color: #e0e0e0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    text-align: center;
-    font-weight: bold;
 }
 
 .calc-container {
-    width: 70%;
+    width: 60%;
     display: flex;
     justify-content: center;
     padding: 4rem 0 4rem 0;
 }
 
+@media (max-width: 1340px) {
+    .container {
+        flex-wrap: wrap;
+    }
+
+    .calc-container,
+    .intro-container {
+        min-width: 100%;
+    }
+}
+
+.keybinds ul {
+    list-style: none;
+    padding-left: 2rem;
+}
+
+.keybinds li {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-family: var(--fontText);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.6rem;
+    color: black;
+}
+
+.keybinds .key {
+    display: inline-block;
+    min-width: 6rem;
+    padding: 0.3rem 0.8rem;
+    margin-right: 1rem;
+    background: var(--main);
+    border-radius: 0.2rem;
+    font-family: var(--fontTitle);
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+}
+
+.keybinds .smallkey {
+    min-width: 1rem;
+}
+
 .mainCalc {
-    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-    border: solid 0.5rem #ccc;
+    background: var(--main2);
+    border: solid 0.3rem #ffffff;
     border-radius: 2rem;
     width: 40%;
     padding: 1rem;
     text-align: center;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: #333;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.26);
+    font-family: var(--fontText);
+    color: var(--h2);
+    overflow: hidden;
 }
-
 
 .btn-container {
     display: flex;
@@ -158,7 +177,6 @@ input:focus {
     /* Sombra mais forte ao focar */
 }
 
-
 /* ---------------------------------------------------------------- BUTTON */
 
 .btn {
@@ -168,9 +186,9 @@ input:focus {
     border: none;
     border-radius: 1rem;
     cursor: pointer;
-    background: linear-gradient(135deg, #76c7f0, #13305e);
+    background: var(--main3);
     color: white;
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--fontText);
     font-size: 2.5rem;
     font-weight: 500;
     transition: .2s ease-out;
@@ -190,13 +208,12 @@ input:focus {
     animation: press .1s;
 }
 
-
 .h1 {
     font-family: var(--fontTitle);
     font-size: 2rem;
     font-weight: 500;
     text-align: center;
-    color: black;
+    color: var(--h1);
     margin: 2rem 0.5rem 2rem 0.5rem;
 }
 
@@ -205,40 +222,26 @@ input:focus {
     font-size: 1rem;
     font-weight: 300;
     text-align: justify;
-    line-height: 28px;
-    color: gray;
+    line-height: 1.6rem;
+    color: var(--h2);
+    margin: 1rem 0 2rem 0;
 }
 
 .footer {
-    font-family: var(--fontText);
-    font-size: 1rem;
-    font-weight: 300;
-    text-align: justify;
-    line-height: 28px;
-    color: gray;
-    padding: 2rem;
     text-align: center;
-    background-color: var(--shadow);
-}
-
-a {
-    font-family: var(--fontText);
-    font-size: 1rem;
-    font-weight: 300;
-    text-align: justify;
-    line-height: 28px;
-    color: gray;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
+    margin: 4rem 0 0 0;
+    padding: 1.2rem;
+    background: var(--shadow);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .icon {
-    width: 3rem;
-    height: 3rem;
-    margin: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.6rem;
 }
 
 :disabled,
@@ -247,7 +250,7 @@ a:hover {
     cursor: not-allowed;
 }
 
-/* ---------------------------------------------------------------- TESTS */
+/* ---------------------------------------------------------------- ANIMATION */
 
 @keyframes press {
 
@@ -260,7 +263,7 @@ a:hover {
     }
 }
 
-.fade-in {
+.press {
     animation-name: press;
     animation-duration: .1s;
 }
@@ -277,7 +280,7 @@ a:hover {
     }
 }
 
-.aaa {
+.slide {
     animation-name: slide;
     animation-duration: 1s;
 }

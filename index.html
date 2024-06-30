@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
 
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
 
@@ -20,26 +18,32 @@
     <div class="container">
 
         <div class="intro-container">
-            <h2>É possível utilizar o teclado para interagir com a calculadora.</h2>
+            <h2 class="h2">É possível utilizar o teclado para interagir com a calculadora.</h2>
             <div class="keybinds">
                 <ul>
-                    <li><span class="key">Backspace</span>: Apagar</li>
-                    <li><span class="key">Enter</span>: Calcular</li>
-                    <li><span class="key">. | ,</span>: Decimal</li>
-                    <li><span class="key">+ | - | * | /</span>: Operação correspondente</li>
-                    <li><span class="key">0 - 9</span>: Número correspondente</li>
+                    <li><span class="key">Backspace</span>Apagar</li>
+                    <li><span class="key">Enter</span>Calcular</li>
+                    <li><span class="key smallkey">.</span>
+                        <span class="key smallkey">,</span>Decimal
+                    </li>
+                    <li><span class="key smallkey">+</span>
+                        <span class="key smallkey">-</span>
+                        <span class="key smallkey">/</span>
+                        <span class="key smallkey">*</span>Operação correspondente
+                    </li>
+                    <li><span class="key">0 - 9</span>Número correspondente</li>
                 </ul>
             </div>
         </div>
 
         <div class="calc-container">
-            <div class="mainCalc aaa">
-                <div class="visor">
+            <div class="mainCalc slide">
+
+                <div>
                     <input id="visor" type="text" readonly />
                 </div>
 
                 <div class="btn-container">
-
                     <div class="numButtons">
                         <button id="btn7" class="btn" onclick=addNum(7)>7</button>
                         <button id="btn8" class="btn" onclick=addNum(8)>8</button>
@@ -63,7 +67,6 @@
                         <button id="btn*" class="btn" onclick="addNum('*')">&times;</button>
                         <button id="btn=" class="btn" onclick=calculate()>=</button>
                     </div>
-
                 </div>
 
             </div>
@@ -71,13 +74,13 @@
 
     </div>
 
-    <div class="footer">
+    <div id="footer" class="h2 footer">
         Developed by Matheus Della
         <br>
         <a target="_blank" href="https://www.linkedin.com/in/matheus-della-crocce-santos-86ab60232/"><img class="icon"
                 src="./images/linkedin.svg"></a>
         <a target="_blank" href="https://github.com/MDellaCS/"><img class="icon" src="./images/github.svg"></a>
     </div>
+    
 </body>
-
 </html>

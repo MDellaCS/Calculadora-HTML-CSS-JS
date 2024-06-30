@@ -15,13 +15,15 @@ let btnDivide;
 let btnTimes;
 let btnEquals;
 let btnDecimal;
+let footer;
 let calculado = false;
 
-function action() {
+async function action() {
 
-    visor.classList.remove('fade-in');
+    visor.classList.add('press');
+    await delay(100);
     void visor.offsetWidth;
-    visor.classList.add('fade-in');
+    visor.classList.remove('press');
 
     btnPlus.disabled = true;
     btnMinus.disabled = true;
@@ -85,20 +87,25 @@ function calculate() {
 }
 
 function backspace() {
-    console.log("Apagou");
     visor.value = visor.value.slice(0, -1);
 
     action();
 }
 
-function clearVisor() {
-    
-    visor.classList.remove('spin');
-    void visor.offsetWidth;
-    visor.classList.add('spin');
+async function clearVisor() {
 
+    visor.classList.add('spin');
     visor.value = "";
     action();
+
+    await delay(500);
+
+    visor.classList.remove('spin');
+    void visor.offsetWidth;
+}
+
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 document.addEventListener("keydown", function (event) {
@@ -146,6 +153,24 @@ document.addEventListener("keydown", function (event) {
 
 });
 
+function fixFooterToBottom() {
+    var bodyHeight = document.body.clientHeight;
+    var windowHeight = window.innerHeight;
+    var footerHeight = footer.offsetHeight;
+
+    if (bodyHeight + footerHeight < windowHeight) {
+        footer.style.position = 'fixed';
+        footer.style.bottom = '0';
+        footer.style.left = '0';
+        footer.style.right = '0';
+    } else {
+        footer.style.position = 'static';
+    }
+}
+
+window.onload = fixFooterToBottom;
+window.onresize = fixFooterToBottom;
+
 document.addEventListener("DOMContentLoaded", function () {
     visor = document.getElementById("visor");
     btn0 = document.getElementById("btn0");
@@ -164,5 +189,6 @@ document.addEventListener("DOMContentLoaded", function () {
     btnTimes = document.getElementById("btn*");
     btnEquals = document.getElementById("btn=");
     btnDecimal = document.getElementById("btn.");
+    footer = document.getElementById("footer");
     action();
 });
